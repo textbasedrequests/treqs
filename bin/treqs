@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'treqs'
+
+if ARGV.empty?
+  puts 'Supply a path to a .toml file.'
+  exit(0)
+end
+
+filepath = ARGV[0]
+puts Treqs.call(filepath)
