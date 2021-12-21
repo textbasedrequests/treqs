@@ -12,3 +12,5 @@ gem 'rspec', '~> 3.0'
 gem 'rubocop', '~> 1.7'
 
 gem 'toml', '~> 0.3.0'
+
+gem 'faraday'

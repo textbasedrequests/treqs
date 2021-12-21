@@ -4,9 +4,14 @@
 require 'treqs'
 
 if ARGV.empty?
-  puts 'Supply a path to a .toml file.'
+  puts 'Supply a path to a config file'
   exit(0)
 end
 
 filepath = ARGV[0]
-puts Treqs.call(filepath)
+
+begin
+  puts Treqs.call(filepath)
+rescue StandardError => e
+  puts e
+end

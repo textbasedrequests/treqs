@@ -8,6 +8,26 @@ GEM
   specs:
     ast (2.4.2)
     diff-lcs (1.4.4)
+    faraday (1.8.0)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
+      faraday-excon (~> 1.1)
+      faraday-httpclient (~> 1.0.1)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
+      faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords (>= 0.0.4)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
+    faraday-excon (1.1.0)
+    faraday-httpclient (1.0.1)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.2.0)
+    faraday-patron (1.0.0)
+    faraday-rack (1.0.0)
+    multipart-post (2.1.1)
     parallel (1.21.0)
     parser (3.0.3.2)
       ast (~> 2.4.1)
@@ -41,14 +61,17 @@ GEM
     rubocop-ast (1.14.0)
       parser (>= 3.0.1.1)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
     toml (0.3.0)
       parslet (>= 1.8.0, < 3.0.0)
     unicode-display_width (2.1.0)
 
 PLATFORMS
+  ruby
   universal-darwin-20
 
 DEPENDENCIES
+  faraday
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.7)

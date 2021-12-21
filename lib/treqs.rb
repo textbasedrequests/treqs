@@ -1,29 +1,20 @@
 # frozen_string_literal: true
 
-require 'net/http'
-require 'toml'
 require_relative 'treqs/version'
+require_relative 'treqs/parser'
+require_relative 'treqs/checker'
+require_relative 'treqs/config'
+require_relative 'treqs/requestor'
 
-# Some doc here :)
+# Main interface
 module Treqs
-  class Error < StandardError; end
-
   def call(filepath)
-    config = TOML.load_file(filepath)
-
-    url = URI(config['url'])
-    method = config['method']
-    request(method, url)
+    filepath
+      .then { |fpath|  Parser.call(fpath) }
+      .then { |hash|   Checker.call(hash) }
+      .then { |hash|   Config.new(hash) }
+      .then { |config| Requestor.call(config) }
   end
 
-  def request(method, url, body = nil)
-    case method
-    when 'GET'
-      Net::HTTP.get(url)
-    when 'POST'
-      Net::HTTP.post(url, body)
-    end
-  end
-
-  module_function :call, :request
+  module_function :call
 end
