@@ -12,7 +12,8 @@ module Requestor
   def call(config)
     conn = Faraday.new(
       url: config.url,
-      headers: config.headers
+      headers: config.headers,
+      params: config.params
     )
 
     case config.method

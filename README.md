@@ -15,13 +15,17 @@ Here's a *example.toml* file (using [httpbin](https://httpbin.org)):
 ```toml
 url = "http://httpbin.org/get"
 method = "GET"
+[params]
+key1="value1"
 ```
 
 ```
 $ treqs example.toml
 
 {
-  "args": {},
+  "args": {
+    "key1": "value1"
+  },
   "headers": {
     "Accept": "*/*",
     "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
@@ -30,7 +34,7 @@ $ treqs example.toml
     "X-Amzn-Trace-Id": "Root=1-61cef5f2-4d3838d5301ed2a930e4da5d"
   },
   "origin": "185.114.123.86",
-  "url": "http://httpbin.org/get"
+  "url": "http://httpbin.org/get?key1=value1"
 }
 ```
 
@@ -63,7 +67,7 @@ src/
 
 README.md
 
-requets/
+requests/
   get_user.toml
   create_user.toml
   list_all_items.toml

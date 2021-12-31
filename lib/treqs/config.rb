@@ -2,7 +2,7 @@
 
 # Class containing the request information
 class Config
-  attr_reader :method, :url, :headers, :body
+  attr_reader :method, :url, :headers, :body, :params
 
   # @param [Hash]
   def initialize(config_hash)
@@ -10,5 +10,6 @@ class Config
     @url = URI(config_hash['url'])
     @headers = config_hash['headers']
     @body = config_hash['body']
+    @params = config_hash['params']
   end
 end

@@ -6,7 +6,7 @@ module Checker
   class ExtraKeysError < StandardError; end
 
   REQUIRED_KEYS = %w[url method].to_set
-  EXTRA_KEYS = %w[headers body].to_set
+  EXTRA_KEYS = %w[headers body params].to_set
 
   # @param [Hash]
   # @raise [Checker::RequiredKeysError]
