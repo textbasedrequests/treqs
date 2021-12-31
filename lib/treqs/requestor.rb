@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'net/http'
 require 'faraday'
 
 # Module to make HTTP calls
@@ -20,7 +19,10 @@ module Requestor
     when 'GET'
       conn.get.body
     when 'POST'
-      Net::HTTP.post(url, body)
+      res = conn.post() do |req|
+        req.body = config.body.to_json
+      end
+      res.body
     end
   end
 
