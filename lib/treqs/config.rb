@@ -3,6 +3,7 @@
 # Class containing the request information
 class Config
   attr_reader :method, :url, :headers, :body, :params
+
   DEFAULT_HEADERS = { 'Content-Type' => 'application/json' }.freeze
 
   # @param [Hash]

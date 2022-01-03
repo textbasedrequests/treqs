@@ -15,8 +15,9 @@ Here's a *example.toml* file (using [httpbin](https://httpbin.org)):
 ```toml
 url = "http://httpbin.org/get"
 method = "GET"
+
 [params]
-key1="value1"
+key1 = "value1"
 ```
 
 ```
@@ -42,7 +43,6 @@ One of the benefits of using text config files is that you can document/test you
 
 ### TODO
 
-- POST/PUT/DELETE requests (body & headers)
 - Authentication
 - Passing secrets/env vars to the .toml files
 - Tests

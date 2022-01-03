@@ -3,6 +3,7 @@
 # Checks structure of the input hash
 module Checker
   class RequiredKeysError < StandardError; end
+
   class ExtraKeysError < StandardError; end
 
   REQUIRED_KEYS = %w[url method].to_set

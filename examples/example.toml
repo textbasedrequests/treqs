@@ -1,0 +1,6 @@
+url = "http://httpbin.org/get"
+method = "GET"
+
+[params]
+
+key1 = "value1"
