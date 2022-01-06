@@ -1,0 +1,6 @@
+url = "http://httpbin.org/get"
+method = "SUPER-GET"
+
+[params]
+
+key1 = "value1"
