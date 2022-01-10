@@ -6,8 +6,9 @@ require 'faraday'
 module Requestor
   class Error < StandardError; end
 
-  # Fires a request based on a Config object
+  # Fires a request based on a [Config] object
   # @param [Config]
+  # @return [String]
   def call(config)
     conn = Faraday.new(
       url: config.url,
@@ -15,10 +16,11 @@ module Requestor
       params: config.params
     )
 
-    res = conn.send(config.method.downcase) do |req|
-      req.body = config.body.to_json
-    end
-    res.body
+    method = config.method.downcase
+    json   = config.body.to_json
+
+    conn.send(method) { |req| req.body = json }
+        .body
   end
 
   module_function :call

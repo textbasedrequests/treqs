@@ -1,12 +1,6 @@
-# treqs 
+# 🦖 treqs [![build](https://github.com/textbasedrequests/treqs/actions/workflows/build.yml/badge.svg)](https://github.com/textbasedrequests/treqs/actions/workflows/build.yml) [![Project status](https://img.shields.io/badge/status-active-brightgreen.svg)](#status)
 
----
-
-⚠️ Under development ⚠️
-
----
-
-*treqs* (tee reqs 🦖) stands for text-based requests, where the idea is to use simple config files (TOMLs) to fire off requests from your terminal.
+*treqs* (tee reqs) stands for text-based requests, where the idea is to use simple config files (TOMLs) to fire off requests from your terminal.
 
 ### Usage
 
